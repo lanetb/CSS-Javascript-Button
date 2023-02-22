@@ -1,16 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
     <title>button</title>
 </head>
+
 <body>
     <div class="container">
-        <button>Button</button>
+        <div class="front">
+            <button>Button</button>
+        </div>
+        
+        <div class="behind">
+            <svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <g>
+                    <path id="one"
+                        d="M0 434L21.5 440.8C43 447.7 86 461.3 128.8 474.3C171.7 487.3 214.3 499.7 257.2 497.2C300 494.7 343 477.3 385.8 471C428.7 464.7 471.3 469.3 514.2 469.8C557 470.3 600 466.7 642.8 453.2C685.7 439.7 728.3 416.3 771.2 409.5C814 402.7 857 412.3 878.5 417.2L900 422L900 601L878.5 601C857 601 814 601 771.2 601C728.3 601 685.7 601 642.8 601C600 601 557 601 514.2 601C471.3 601 428.7 601 385.8 601C343 601 300 601 257.2 601C214.3 601 171.7 601 128.8 601C86 601 43 601 21.5 601L0 601Z"
+                        fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter">
+                    </path>
+                </g>
+                <g style= "visibility: hidden">
+                    <path id="two"
+                        d="M0 454L21.5 457.5C43 461 86 468 128.8 472.8C171.7 477.7 214.3 480.3 257.2 473.8C300 467.3 343 451.7 385.8 445.3C428.7 439 471.3 442 514.2 434.5C557 427 600 409 642.8 406.7C685.7 404.3 728.3 417.7 771.2 423.2C814 428.7 857 426.3 878.5 425.2L900 424L900 601L878.5 601C857 601 814 601 771.2 601C728.3 601 685.7 601 642.8 601C600 601 557 601 514.2 601C471.3 601 428.7 601 385.8 601C343 601 300 601 257.2 601C214.3 601 171.7 601 128.8 601C86 601 43 601 21.5 601L0 601Z" 
+                        fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter">
+                    </path>
+                </g>
+                <g style= "visibility: hidden">
+                    <path id="three"
+                        d="M0 501L21.5 501.8C43 502.7 86 504.3 128.8 507.7C171.7 511 214.3 516 257.2 513C300 510 343 499 385.8 487.7C428.7 476.3 471.3 464.7 514.2 449.8C557 435 600 417 642.8 410.2C685.7 403.3 728.3 407.7 771.2 423.8C814 440 857 468 878.5 482L900 496L900 601L878.5 601C857 601 814 601 771.2 601C728.3 601 685.7 601 642.8 601C600 601 557 601 514.2 601C471.3 601 428.7 601 385.8 601C343 601 300 601 257.2 601C214.3 601 171.7 601 128.8 601C86 601 43 601 21.5 601L0 601Z" 
+                        fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter">
+                    </path>
+                </g>
+                <g style= "visibility: hidden">
+                    <path id="four"
+                        d="M0 376L21.5 390.7C43 405.3 86 434.7 128.8 453.3C171.7 472 214.3 480 257.2 480.7C300 481.3 343 474.7 385.8 460C428.7 445.3 471.3 422.7 514.2 417C557 411.3 600 422.7 642.8 423.7C685.7 424.7 728.3 415.3 771.2 426.7C814 438 857 470 878.5 486L900 502L900 601L878.5 601C857 601 814 601 771.2 601C728.3 601 685.7 601 642.8 601C600 601 557 601 514.2 601C471.3 601 428.7 601 385.8 601C343 601 300 601 257.2 601C214.3 601 171.7 601 128.8 601C86 601 43 601 21.5 601L0 601Z"
+                        fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter">
+                    </path>
+                </g>
+            </svg>
+        </div>
     </div>
-    
+    <script>
+        while (true){
+            
+        }
+        const tween = KUTE.fromTo(
+            '#one', 
+            { path: '#one' }, 
+            { path: '#two' },
+            { path: '#three' },
+            { path: '#four' },
+
+            { repeat: 1, duration: 1000}
+            );
+        tween.start();
+    </script>
+
 </body>
+
 </html>

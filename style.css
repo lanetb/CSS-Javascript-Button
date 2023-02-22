@@ -11,9 +11,28 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Rubik', sans-serif;
+    z-index: 1;
 }
 
-.container{
+.front{
+    width: 400px;
+    height: 200px;
+    background: transparent;
+    border-radius: 50px;
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.behind{
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    z-index: 2;
+    margin-top: -235px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,5 +50,11 @@ button{
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
+    z-index: 2;
+}
+
+svg{
+    width: 400px;
+    overflow: hidden;
 }
 
