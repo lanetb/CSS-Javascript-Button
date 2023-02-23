@@ -47,16 +47,34 @@
         </div>
     </div>
     <script>
-        const tween = KUTE.fromTo(
-            '#one', 
-            { path: '#one' }, 
-            { path: '#two' },
-            { path: '#three' },
-            { path: '#four' },
+        const svgs = ['#one', '#two', '#three', '#four']; 
+        let prev = '#one';
+        let next = '#two';
+        let i = 0;
 
-            { repeat: 1, duration: 1000}
+        setInterval(() => {
+            let tween = KUTE.fromTo(
+                prev, 
+                { path: prev }, 
+                { path: next },
+                {duration: 2000}
             );
-        tween.start();
+            tween.start();
+            next = prev;
+            i = rand(next);
+            prev = svgs[i];
+            console.log(prev, next);
+        }, 2000);
+
+        function rand(prev)
+        {
+            let i = Math.floor(Math.random() * 4);
+            if (svgs[i] === prev){
+                i = rand(prev);
+            } 
+            return i;
+        }
+        
     </script>
 
 </body>
