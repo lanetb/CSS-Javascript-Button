@@ -122,7 +122,9 @@
         const svgs = ['#one','#two','#three','#four',
                       '#five','#six','#seven','#eight',
                       '#nine','#ten','#eleven','#tweleve',
-                      '#thriteen','#fourteen','#fifteen','#sixteen']; 
+                      '#thriteen','#fourteen','#fifteen','#sixteen'];
+        let ppprev = ''; 
+        let pprev = '';
         let prev = '#one';
         let next = '#two';
         let i = 0;
@@ -132,20 +134,23 @@
                 '#one', 
                 { path: prev }, 
                 { path: next },
-                {duration: 700, easing: 'easingElasticInOut'}
+                {duration: 650, easing: 'easingElasticInOut'}
             );
-            console.log(prev, next);
+            console.log(pprev, prev, next);
             tween.start();
+            ppprev = pprev;
+            pprev = prev;
             prev = next;
-            i = rand(prev);
+            i = rand(prev, pprev, ppprev);
             next = svgs[i];
-        }, 690);
+        }, 650);
 
-        function rand(prev,)
+        function rand(prev, pprev, ppprev)
         {
             let i = Math.floor(Math.random() * 16);
-            if (svgs[i] === prev){
-                i = rand(prev);
+            console.log(i);
+            if (svgs[i] === prev || svgs[i] === pprev){
+                i = rand(prev, pprev, ppprev);
             } 
             return i;
         }
